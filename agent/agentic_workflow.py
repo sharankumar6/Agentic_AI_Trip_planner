@@ -6,7 +6,7 @@ from langgraph.prebuilt import ToolNode, tools_condition
 
 class GraphBuilder():
     def __init__(self):
-        self.toold = [
+        self.tools = [
             # WeatherInfoTool(),
             # PlaceSearchTool(),
             # CalculatorTool(),
