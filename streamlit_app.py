@@ -6,13 +6,13 @@ import sys
 BASE_URL = "http://localhost:8000"
 
 st.set_page_config(
-    page_title="🌍 Travel Planner Agentic Application",
+    page_title="Travel Planner Agentic Application",
     page_icon="🌍",
     layout="centered",
     initial_sidebar_state="expanded",
 )
 
-st.title("🌍 Travel Planner Agentic Application")
+st.title("Travel Planner Agentic Application")
 
 #Initialize chat history
 if "messages" in st.session_state:
