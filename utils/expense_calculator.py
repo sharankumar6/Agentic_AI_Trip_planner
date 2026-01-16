@@ -1,5 +1,4 @@
 class Calculator:
-
     @staticmethod
     def multiply(a: int, b: int) -> int:
         """
@@ -13,17 +12,17 @@ class Calculator:
             int: The product of a and b.
         """
         return a * b
-
+    
     @staticmethod
-    def calculate_total(*x:float) -> float:
+    def calculate_total(*x: float) -> float:
         """
-        Calculate sum of the given list of numbers.
+        Calculate sum of the given list of numbers
 
         Args:
-            x (list): List of floating numbers.
+            x (list): List of floating numbers
 
         Returns:
-            float: The sum of numbers in the list x.
+            float: The sum of numbers in the list x
         """
         return sum(x)
     
@@ -40,3 +39,5 @@ class Calculator:
             float: Expense for a single day
         """
         return total / days if days > 0 else 0
+    
+    

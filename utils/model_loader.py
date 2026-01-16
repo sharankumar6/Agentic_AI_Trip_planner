@@ -4,20 +4,20 @@ from typing import Literal, Optional, Any
 from pydantic import BaseModel, Field
 from utils.config_loader import load_config
 from langchain_groq import ChatGroq
-# from langchain_openai import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain_google_genai import ChatGoogleGenerativeAI
+
 
 class ConfigLoader:
     def __init__(self):
-        print(f"Loaded Config.....")
+        print(f"Loaded config.....")
         self.config = load_config()
-
+    
     def __getitem__(self, key):
         return self.config[key]
-    
 
 class ModelLoader(BaseModel):
-    model_provider: Literal["groq", "gemini"] = "groq"
+    model_provider: Literal["groq", "openai"] = "groq"
     config: Optional[ConfigLoader] = Field(default=None, exclude=True)
 
     def model_post_init(self, __context: Any) -> None:
@@ -30,7 +30,7 @@ class ModelLoader(BaseModel):
         """
         Load and return the LLM model.
         """
-        print("LLM model loading...")
+        print("LLM loading...")
         print(f"Loading model from provider: {self.model_provider}")
         if self.model_provider == "groq":
             print("Loading LLM from Groq..............")

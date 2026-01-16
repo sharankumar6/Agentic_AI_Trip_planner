@@ -10,7 +10,7 @@ class CurrencyConverterTool:
         self.api_key = os.environ.get("EXCHANGE_RATE_API_KEY")
         self.currency_service = CurrencyConverter(self.api_key)
         self.currency_converter_tool_list = self._setup_tools()
-        
+
     def _setup_tools(self) -> List:
         """Setup all tools for the currency converter tool"""
         @tool
